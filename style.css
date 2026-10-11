@@ -1,0 +1,635 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap");
+
+
+:root {
+  --navy: #0b1f3a;          
+  --navy-light: #13305a;    
+  --steel: #5b6770;         
+  --steel-light: #e6e9ec;  
+  --white: #ffffff;
+  --gold: #c9a227;          
+  --gold-dark: #a8851c;     
+  --text: #1d2630;          
+
+  --radius: 6px;            /* Rounded corners for cards and buttons */
+  --shadow: 0 6px 18px rgba(11, 31, 58, 0.12);
+  --transition-speed: 0.4s; /* Speed of hover animations (lower = faster) */
+  --max-width: 1200px;      /* Maximum width of page content */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;   
+}
+
+body {
+  font-family: "Tajawal", "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text);
+  background-color: var(--white);
+  direction: rtl;         
+  text-align: right;
+}
+
+h1, h2, h3 {
+  color: var(--navy);
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background-color: var(--steel-light);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: var(--gold);
+  margin: 0.6rem auto 0;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.8rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px); 
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;         
+}
+
+.btn-gold {
+  background-color: var(--gold);
+  color: var(--navy);
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-dark);
+  color: var(--white);
+}
+
+.btn-outline {
+  border-color: var(--white);
+  color: var(--white);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: var(--white);
+  color: var(--navy);
+}
+
+.btn-navy {
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+.btn-navy:hover {
+  background-color: var(--navy-light);
+}
+
+/* ---------- 4. HEADER & NAVIGATION ---------- */
+.site-header {
+  background-color: var(--navy);
+  color: var(--white);
+  position: sticky;          /* Stays at top while scrolling */
+  top: 0;
+  z-index: 100;              /* Keeps header above other content */
+  border-bottom: 3px solid var(--gold);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--white);
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-text strong {
+  font-size: 1.1rem;
+  color: var(--white);
+}
+
+.logo-text span {
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  direction: ltr;
+  text-align: right;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  color: var(--white);
+  font-weight: 500;
+  padding: 0.4rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* Mobile menu button (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  font-size: 1.4rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+/* ---------- 5. HERO SECTION (home page top) ---------- */
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  /* Background image. To change it, replace the file name below. */
+  background-image: url("../images/hero-steel.jpg");
+  background-size: cover;        /* Image fills the whole area */
+  background-position: center;   /* Keeps the middle of the image visible */
+  background-repeat: no-repeat;
+  background-color: var(--navy); /* Shown while the image loads */
+  padding: 0;
+}
+
+/* Dark overlay layered on top of the hero image for readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;                      /* Covers the entire hero area */
+  background: linear-gradient(
+    to left,
+    rgba(11, 31, 58, 0.92),
+    rgba(11, 31, 58, 0.6)
+  );
+  z-index: 1;                    /* Sits above the image, below the text */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;                    /* Sits above the overlay */
+  padding: 4rem 0;
+  max-width: 720px;
+}
+
+.hero-company-ar {
+  font-size: 2.4rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.hero-slogan {
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* ---------- 6. ABOUT / INFO CARDS (vision, mission, values) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: var(--white);
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--gold);
+  transition: transform var(--transition-speed);
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+}
+
+.info-card .icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ---------- 7. PROJECT CARDS WITH HOVER EFFECT ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+}
+
+/* The card container — hides anything that zooms outside it */
+.project-card {
+  position: relative;            /* Needed so overlay can be placed inside */
+  overflow: hidden;              /* Cuts off the zooming image at the edges */
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: var(--navy);
+  height: 320px;                 /* Card height. Change this number to resize. */
+  cursor: pointer;
+}
+
+/* The image itself */
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;             /* Crops the image to fill the card without stretching */
+  object-position: center;       /* Change to "top", "left", etc. to move the crop */
+  transition: transform var(--transition-speed) ease;
+}
+
+/* Zoom in on hover — change scale(1.1) to scale(1.2) for more zoom */
+.project-card:hover .project-image,
+.project-card:focus-within .project-image {
+  transform: scale(1.1);
+}
+
+/* Dark overlay that fades in over the image */
+.project-overlay {
+  position: absolute;
+  inset: 0;                      /* Covers the whole card */
+  background: rgba(11, 31, 58, 0.85); /* Last number = darkness (0 to 1) */
+  color: var(--white);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;     /* Text sits at the bottom */
+  opacity: 0;                    /* Hidden by default */
+  transition: opacity var(--transition-speed) ease;
+  z-index: 2;
+}
+
+/* Show the overlay on hover or keyboard focus */
+.project-card:hover .project-overlay,
+.project-card:focus-within .project-overlay {
+  opacity: 1;
+}
+
+/* Always visible on touch screens, where there is no hover */
+@media (hover: none) {
+  .project-overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(11, 31, 58, 0.95), rgba(11, 31, 58, 0.25));
+  }
+}
+
+.project-category {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2rem 0.7rem;
+  border-radius: 3px;
+  margin-bottom: 0.6rem;
+  align-self: flex-start;
+}
+
+.project-title {
+  color: var(--white);
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.project-meta {
+  font-size: 0.85rem;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.project-details-btn {
+  align-self: flex-start;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.project-details-btn:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* ---------- 8. CONTACT PAGE ---------- */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2.5rem;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.3rem;
+  align-items: flex-start;
+}
+
+.contact-info-item .label {
+  font-weight: 700;
+  color: var(--navy);
+  display: block;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+  background: var(--gold);
+  color: var(--navy);
+  transform: scale(1.1);
+}
+
+.contact-form {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--gold);
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--navy);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid var(--steel);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
+  direction: rtl;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid var(--gold);
+  border-color: var(--gold);
+}
+
+.form-group textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* Invalid fields get a red border; the message appears below */
+.form-group.has-error input,
+.form-group.has-error textarea {
+  border-color: #b3261e;
+}
+
+.error-message {
+  color: #b3261e;
+  font-size: 0.88rem;
+  margin-top: 0.3rem;
+  display: none;
+}
+
+.form-group.has-error .error-message {
+  display: block;
+}
+
+.form-status {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  background: #e5f4e8;
+  color: #1d5e2a;
+}
+
+.form-status.warning {
+  display: block;
+  background: #fff4d6;
+  color: #7a5a00;
+}
+
+/* ---------- 9. PAGE HEADER (inner pages) ---------- */
+.page-header {
+  background: linear-gradient(to left, var(--navy), var(--navy-light));
+  color: var(--white);
+  padding: 3rem 0;
+  border-bottom: 3px solid var(--gold);
+}
+
+.page-header h1 {
+  color: var(--white);
+  font-size: 2.2rem;
+}
+
+.page-header p {
+  color: var(--steel-light);
+  margin-top: 0.5rem;
+}
+
+/* ---------- 10. FEATURED / SERVICE LISTS ---------- */
+.service-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.service-list li {
+  background: var(--white);
+  padding: 1rem 1.2rem;
+  border-right: 4px solid var(--gold);  /* Right border (RTL side) */
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-weight: 500;
+}
+
+.placeholder-note {
+  background: #fff8e1;
+  border: 1px dashed var(--gold);
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  color: #6b5200;
+  margin-top: 1rem;
+}
+
+/* ---------- 11. FOOTER ---------- */
+.site-footer {
+  background: var(--navy);
+  color: var(--steel-light);
+  padding: 3rem 0 1.5rem;
+  border-top: 3px solid var(--gold);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.site-footer h3 {
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+.site-footer a {
+  color: var(--steel-light);
+  transition: color 0.3s;
+}
+
+.site-footer a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid var(--steel);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- 12. ACCESSIBILITY HELPERS ---------- */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  right: 10px;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 0.5rem 1rem;
+  z-index: 200;
+}
+
+.skip-link:focus {
+  top: 10px;                /* Appears only when a keyboard user tabs to it */
+}

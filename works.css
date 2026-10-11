@@ -1,0 +1,48 @@
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  background: var(--white);
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;         
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn:hover {
+  background: var(--steel-light);
+}
+
+
+.filter-btn.active {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.filter-btn:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+
+.project-card[hidden] {
+  display: none;
+}
+
+.works-note {
+  text-align: center;
+  margin-top: 2.5rem;
+  color: var(--steel);
+  font-size: 0.95rem;
+}

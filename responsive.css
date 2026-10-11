@@ -1,0 +1,107 @@
+
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;  
+  }
+
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero-company-ar {
+    font-size: 2rem;
+  }
+}
+
+
+@media (max-width: 700px) {
+ 
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;               
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: var(--navy);
+    border-top: 1px solid var(--gold);
+  }
+
+  .main-nav.open {
+    display: block;         
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 0.9rem 5%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .main-nav a:hover,
+  .main-nav a.active {
+    background: var(--navy-light);
+  }
+
+  .logo-text span {
+    display: none;              
+  }
+
+  .hero-company-ar {
+    font-size: 1.7rem;
+  }
+
+  .hero-slogan {
+    font-size: 1.1rem;
+  }
+
+  .project-card {
+    height: 280px;     
+  }
+
+  .contact-form {
+    padding: 1.3rem;
+  }
+
+  section {
+    padding: 2.8rem 0;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn {
+    width: 100%;             
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
