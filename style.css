@@ -235,7 +235,7 @@ section {
   align-items: center;
   color: var(--white);
   /* Background image. To change it, replace the file name below. */
-  background-image: url("../images/hero-steel.jpg");
+  background-image: url("hero-steel.jpg");
   background-size: cover;        /* Image fills the whole area */
   background-position: center;   /* Keeps the middle of the image visible */
   background-repeat: no-repeat;
