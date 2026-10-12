@@ -3,20 +3,21 @@
 
 
 :root {
-  --navy: #0b1f3a;          
-  --navy-light: #13305a;    
-  --steel: #5b6770;         
-  --steel-light: #e6e9ec;  
-  --white: #ffffff;
-  --gold: #c9a227;          
-  --gold-dark: #a8851c;     
-  --text: #1d2630;          
+    --navy: #0b1f3a;
+    --navy-light: #13305a;
+    --steel: #5b6770;
+    --steel-light: #e6e9ec;
+    --white: #ffffff;
+    --gold: #dbdbda;
+    --gold-dark: #fffaea;
+    --text: #1d2630;
 
-  --radius: 6px;            /* Rounded corners for cards and buttons */
-  --shadow: 0 6px 18px rgba(11, 31, 58, 0.12);
-  --transition-speed: 0.4s; /* Speed of hover animations (lower = faster) */
-  --max-width: 1200px;      /* Maximum width of page content */
+    --radius: 6px;
+    --shadow: 0 6px 18px rgba(11, 31, 58, 0.12);
+    --transition-speed: 0.4s;
+    --max-width: 1200px;
 }
+
 
 * {
   box-sizing: border-box;
@@ -118,34 +119,37 @@ section {
 }
 
 .btn-gold {
-  background-color: var(--gold);
-  color: var(--navy);
+    border-color: var(--white);
+    background: transparent;
+    color: var(--white);
 }
 
 .btn-gold:hover {
-  background-color: var(--gold-dark);
-  color: var(--white);
+    background-color: var(--white);
+    color: var(--navy);
 }
 
 .btn-outline {
-  border-color: var(--white);
-  color: var(--white);
-  background: transparent;
+    border-color: var(--white);
+    color: var(--white);
+    background: transparent;
 }
 
 .btn-outline:hover {
-  background-color: var(--white);
-  color: var(--navy);
+    background-color: var(--white);
+    color: var(--navy);
 }
 
 .btn-navy {
-  background-color: var(--navy);
-  color: var(--white);
+    background-color: var(--navy);
+    color: var(--white);
 }
 
 .btn-navy:hover {
-  background-color: var(--navy-light);
+    background-color: var(--navy-light);
 }
+
+ 
 
 /* ---------- 4. HEADER & NAVIGATION ---------- */
 .site-header {
