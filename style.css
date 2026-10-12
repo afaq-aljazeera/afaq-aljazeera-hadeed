@@ -129,6 +129,17 @@ section {
     color: var(--navy);
 }
 
+.btn-gol {
+  border-color: white;
+  background: #0b1f3a;
+  color: var(--white);
+}
+
+.btn-gol:hover {
+  background-color: #003983a9;
+  color: var(--navy);
+}
+
 .btn-outline {
     border-color: var(--white);
     color: var(--white);
